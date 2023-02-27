@@ -78,3 +78,10 @@ void error_ext(void)
     ft_printf("\033[0;33mInvalid map extension\n\033[0m");
     exit(1);
 }
+
+void error_path(void)
+{
+    ft_printf("\033[0;31mError\n\033[0m");
+    ft_printf("\033[0;33mInvalid map no possible path\n\033[0m");
+    exit(1);
+}

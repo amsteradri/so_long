@@ -49,6 +49,33 @@ int map_height(char **map)
     return(i);
 }
 
+void	hunt_letter(map_values *map)
+{
+	int	col;
+	int	fil;
+
+	col = -1;
+	while (map->y > ++col)
+	{
+		fil = -1;
+		while (map->map[col][++fil])
+		{
+			if (map->map[col][fil] == 'P')
+			{
+				map->col_jp = col;
+				map->fil_jp = fil;
+			}
+			else if (map->map[col][fil] == 'E')
+			{
+				map->col_fin = col;
+				map->fil_fin = fil;
+			}
+		}
+	}
+	return ;
+}
+
+
 void init_vars(map_values *map)
 {
     map->y = map_height(map->map);

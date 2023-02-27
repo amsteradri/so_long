@@ -25,6 +25,7 @@ int main(int argc, char **argv)
     check_ext(argv[1]);
     map.map = read_map(argv[1]);
     init_vars(&map);
+    hunt_letter(&map);
     // while (i < map.y) 
     // {
     //     int j = 0;
@@ -37,6 +38,8 @@ int main(int argc, char **argv)
     // }
     all_checks(&map);
     //movidas minilibx
-    init_window(&map);
+    //init_window(&map);
+
+    find_path(&map);
 
 }

@@ -25,7 +25,7 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 # include <fcntl.h>
-#include <mlx.h>
+//#include <mlx.h>
 
 
 typedef struct map_values
@@ -33,6 +33,10 @@ typedef struct map_values
     char **map;
     int x;
     int y;
+    int col_jp;
+    int fil_jp;
+    int col_fin;
+    int fil_fin;
 
 }map_values;
 
@@ -49,12 +53,15 @@ void    error_rect(void);
 void    error_walls(int n);
 void    error_char(void);
 void    error_ext(void);
+void    error_path(void);
 void    check_chars(map_values **map);
 void	map_chars(char *line);
 void    check_pec(map_values **map);
 void    check_ext(char *map);
+void	find_path(map_values *map);
+void	hunt_letter(map_values *map);
 
-void init_window(map_values *map);
+//void init_window(map_values *map);
 
 
 
