@@ -25,7 +25,7 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 # include <fcntl.h>
-//#include <mlx.h>
+#include <mlx.h>
 
 
 typedef struct map_values
@@ -37,8 +37,15 @@ typedef struct map_values
     int fil_jp;
     int col_fin;
     int fil_fin;
+    struct player *player;
 
 }map_values;
+
+typedef struct player
+{
+    int y;
+    int x;
+}player;
 
 
 void    error_agrs(int argc);
@@ -61,7 +68,11 @@ void    check_ext(char *map);
 void	find_path(map_values *map);
 void	hunt_letter(map_values *map);
 
-//void init_window(map_values *map);
+void init_window(map_values *map);
+// void render_obs(map_values *map, void *mlx_ptr, void *win_ptr, void *img_ptr);
+void print_obstacles_on_map(void *mlx_ptr, void *win_ptr, map_values *map);
+void print_char_on_map(void *mlx_ptr, void *win_ptr, map_values *map);
+int move_character_up(int keycode, map_values *map);
 
 
 

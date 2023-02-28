@@ -79,6 +79,5 @@ void	hunt_letter(map_values *map)
 void init_vars(map_values *map)
 {
     map->y = map_height(map->map);
-    map->x = ft_strlen(map->map[0]) - 1;
-	//printf("init:%d\n", map->x);
+    map->x = ft_strlen(map->map[0]);
 }

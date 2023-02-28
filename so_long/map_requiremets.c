@@ -6,7 +6,7 @@
 /*   By: adgutier <adgutier@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 10:11:47 by adgutier          #+#    #+#             */
-/*   Updated: 2023/02/24 19:55:42 by adgutier         ###   ########.fr       */
+/*   Updated: 2023/02/28 15:50:50 by adgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,16 @@ void check_rect(map_values **map)
     while(aux++ < (*map)->y && len < (*map)->y)
     {
 		
-        index = ft_strlen((*map)->map[len]) - 1;
+        index = ft_strlen((*map)->map[len]);
 		if(len == (*map)->y - 1)
 			index = ft_strlen((*map)->map[len]);
         if(index != (*map)->x)
-            error_rect();
+			error_rect();
         len++;
     }
 }
+
+
 
 void	first_line(char *line, int err)
 {
@@ -58,10 +60,11 @@ void check_walls(map_values **map)
 	first_line((*map)->map[0], 1);
 	while(i < aux)
 	{
-		if ((*map)->map[i][0] != '1' ||
-			(*map)->map[i][ft_strlen((*map)->map[i]) - 2] != '1')
+		if ((*map)->map[i][0] != '1')
 				error_walls(2);
 				//printf("ult:%d", (*map)->map[i][ft_strlen((*map)->map[i]) - 1]);
+		if ((*map)->map[i][ft_strlen((*map)->map[i]) - 1] != '1')
+			error_walls(2);
 		i++;
 	}
 	first_line((*map)->map[map_height((*map)->map) - 1], 3);

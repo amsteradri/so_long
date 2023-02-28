@@ -15,7 +15,7 @@ CC			=	gcc
 SRCS		=	so_long.c errors.c map_interpret.c map_requiremets.c map_graph.c
 
 LIBFT		=	libft/libft.a
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address -g
 MLXFLAGS	=	-L ./mlx/ -lmlx -framework OpenGL -framework AppKit -lz
 RM			=	rm -f
 OBJS		=	$(SRCS:%.c=%.o)

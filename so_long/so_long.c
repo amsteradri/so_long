@@ -36,10 +36,16 @@ int main(int argc, char **argv)
     //     printf("\n");
     //     i++;
     // }
+    // int i = 0;
+    // while(map.map[5][i])
+    // {
+    //     printf("%d\n", map.map[5][i]);
+    //     i++;
+    // }
     all_checks(&map);
-    //movidas minilibx
-    //init_window(&map);
-
     find_path(&map);
+    //movidas minilibx
+    init_window(&map);
+    
 
 }
