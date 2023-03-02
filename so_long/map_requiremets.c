@@ -6,7 +6,7 @@
 /*   By: adgutier <adgutier@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 10:11:47 by adgutier          #+#    #+#             */
-/*   Updated: 2023/02/28 15:50:50 by adgutier         ###   ########.fr       */
+/*   Updated: 2023/03/02 10:45:54 by adgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ static char	**create_vector(int count, int len, map_values *map)
 		while (len > x)
 			vector[y][x++] = '0';
 	}
-	vector[map->col_jp][map->fil_jp] = '1';
+	vector[map->fil_jp][map->col_jp] = '1';
 	return (vector);
 }
 

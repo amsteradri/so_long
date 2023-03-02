@@ -54,18 +54,18 @@ void	hunt_letter(map_values *map)
 	int	col;
 	int	fil;
 
-	col = -1;
-	while (map->y > ++col)
+	fil = -1;
+	while (map->y > ++fil)
 	{
-		fil = -1;
-		while (map->map[col][++fil])
+		col = -1;
+		while (map->map[fil][++col])
 		{
-			if (map->map[col][fil] == 'P')
+			if (map->map[fil][col] == 'P')
 			{
 				map->col_jp = col;
 				map->fil_jp = fil;
 			}
-			else if (map->map[col][fil] == 'E')
+			else if (map->map[fil][col] == 'E')
 			{
 				map->col_fin = col;
 				map->fil_fin = fil;
@@ -80,4 +80,5 @@ void init_vars(map_values *map)
 {
     map->y = map_height(map->map);
     map->x = ft_strlen(map->map[0]);
+
 }
