@@ -85,3 +85,9 @@ void error_path(void)
     ft_printf("\033[0;33mInvalid map no possible path\n\033[0m");
     exit(1);
 }
+
+void end_game(void)
+{
+    ft_printf("\033[0;42mGAME ENDED\n\033[0m");
+    exit(1);
+}

@@ -44,6 +44,7 @@ int main(int argc, char **argv)
     // }
     all_checks(&map);
     find_path(&map);
+    init_points(&map);
     //movidas minilibx
     init_window(&map);
     

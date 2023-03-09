@@ -80,5 +80,9 @@ void init_vars(map_values *map)
 {
     map->y = map_height(map->map);
     map->x = ft_strlen(map->map[0]);
+	map->total_points = 0;
+	map->collected_points = 0;
+	map->my_exit = 0;
+	map->moves = 0;
 
 }
