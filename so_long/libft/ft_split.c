@@ -73,7 +73,7 @@ static void	compara_split(char **matrix, const char *s, char c, int words)
 	}
 }
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**matrix;
 	int		words;
@@ -85,6 +85,7 @@ char	**ft_split(const char *s, char c)
 	if (!matrix)
 		return (0);
 	compara_split(matrix, s, c, words);
+	free(s);
 	return (matrix);
 }
 

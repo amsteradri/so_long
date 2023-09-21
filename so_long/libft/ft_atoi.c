@@ -51,6 +51,15 @@ int	ft_atoi(const char *str)
 	return (num * sig);
 }
 
+void	byte_check(int byte, char *content)
+{
+	if (byte < 0)
+	{
+		free(content);
+		return ;
+	}
+}
+
 /*
 int		main(void)
 {

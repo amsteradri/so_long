@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunsignbr.c                                   :+:      :+:    :+:   */
+/*   map_requirements3.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adgutier <adgutier@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 16:08:47 by adgutier          #+#    #+#             */
-/*   Updated: 2022/10/03 16:08:47 by adgutier         ###   ########.fr       */
+/*   Created: 2023/03/12 21:58:02 by adgutier          #+#    #+#             */
+/*   Updated: 2023/03/12 21:58:02 by adgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-int	ft_decimal_unsig(unsigned int nb)
+void	all_checks(t_map_values *map)
 {
-	char	*str;
-	int		i;
+	check_rect(&map);
+	check_walls(&map);
+	check_chars(&map);
+	check_pec(&map);
+}
 
-	i = 0;
-	str = ft_itoa_base(nb, "0123456789");
-	i = i + ft_putstr(str);
-	free (str);
-	return (i);
+void	free_vector(char **vector, int count)
+{
+	int	i;
+
+	if (!vector || !(*vector))
+		return ;
+	i = -1;
+	while (vector [++i])
+		free(vector[i]);
+	free(vector);
+	if (count)
+		count = 0;
 }

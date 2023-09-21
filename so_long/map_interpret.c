@@ -12,10 +12,10 @@
 
 #include "so_long.h"
 
-char **read_map(char *fmap)
+char	**read_map(char *fmap)
 {
-    int		fd;
-    char	*line;
+	int		fd;
+	char	*line;
 	char	*joined_lines;
 
 	line = "";
@@ -29,27 +29,24 @@ char **read_map(char *fmap)
 		if (line == NULL || line[0] == '\n')
 			break ;
 		joined_lines = ft_strjoin(joined_lines, line);
-		free(line);
 	}
-	free(line);
 	close(fd);
 	if (joined_lines[0] == '\0')
 		default_error();
 	return (ft_split(joined_lines, '\n'));
 }
 
-
-int map_height(char **map)
+int	map_height(char **map)
 {
-    int i;
-    
-    i = 0;
-    while(map[i] != NULL)
-        i++;
-    return(i);
+	int	i;
+
+	i = 0;
+	while (map[i] != NULL)
+		i++;
+	return (i);
 }
 
-void	hunt_letter(map_values *map)
+void	hunt_letter(t_map_values *map)
 {
 	int	col;
 	int	fil;
@@ -75,14 +72,12 @@ void	hunt_letter(map_values *map)
 	return ;
 }
 
-
-void init_vars(map_values *map)
+void	init_vars(t_map_values *map)
 {
-    map->y = map_height(map->map);
-    map->x = ft_strlen(map->map[0]);
+	map->y = map_height(map->map);
+	map->x = ft_strlen(map->map[0]);
 	map->total_points = 0;
 	map->collected_points = 0;
 	map->my_exit = 0;
 	map->moves = 0;
-
 }

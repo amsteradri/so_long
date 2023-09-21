@@ -6,7 +6,7 @@
 /*   By: adgutier <adgutier@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:51:20 by adgutier          #+#    #+#             */
-/*   Updated: 2023/02/14 15:30:58 by adgutier         ###   ########.fr       */
+/*   Updated: 2023/03/16 12:12:34 by adgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ char	*frees(char *buffer, char *buf)
 	char	*tmp;
 
 	tmp = ft_strjoin_2(buffer, buf);
-	free(buffer);
 	return (tmp);
 }
 
@@ -83,21 +82,19 @@ char	*ft_read_content(int fd, char *content)
 	buff = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!buff)
 		return (NULL);
-	byte = 1;
+	byte = read(fd, buff, BUFFER_SIZE);
 	while (byte > 0)
 	{
-		byte = read(fd, buff, BUFFER_SIZE);
-		if (byte == -1)
-		{
-			free(buff);
-			return (NULL);
-		}
 		buff[byte] = 0;
 		content = frees(content, buff);
 		if (ft_strchr_2(buff, '\n'))
 			break ;
+		buff = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+		if (!buff)
+			return (NULL);
 	}
 	free(buff);
+	byte_check (byte, content);
 	return (content);
 }
 

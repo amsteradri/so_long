@@ -34,7 +34,7 @@ static int	ft_negative(int *value)
 	return (i);
 }
 
-int	ft_decimal(int nb) 
+int	ft_decimal(int nb)
 {
 	char	*str;
 	int		i;
@@ -42,6 +42,6 @@ int	ft_decimal(int nb)
 	i = ft_negative(&nb);
 	str = ft_itoa_base(nb, "0123456789");
 	i = i + ft_putstr(str);
-	free(str);
-	return(i);
+	free (str);
+	return (i);
 }

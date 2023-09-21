@@ -11,42 +11,23 @@
 /* ************************************************************************** */
 
 #include "so_long.h"
+// void leaks(void)
+// 	{
+// 	system("leaks -q so_long");
+// 	}
 
-
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    map_values map;
-    //movidas minilibx
-    //movidas minilibx
+	t_map_values	map;
 
-
-    (void)argv;
-    error_agrs(argc);
-    check_ext(argv[1]);
-    map.map = read_map(argv[1]);
-    init_vars(&map);
-    hunt_letter(&map);
-    // while (i < map.y) 
-    // {
-    //     int j = 0;
-    //     while (j < map.x + 1)
-    //     {
-    //          printf("%d ", map.map[i][j++]);
-    //     }
-    //     printf("\n");
-    //     i++;
-    // }
-    // int i = 0;
-    // while(map.map[5][i])
-    // {
-    //     printf("%d\n", map.map[5][i]);
-    //     i++;
-    // }
-    all_checks(&map);
-    find_path(&map);
-    init_points(&map);
-    //movidas minilibx
-    init_window(&map);
-    
-
+	(void)argv;
+	error_agrs(argc);
+	check_ext(argv[1]);
+	map.map = read_map(argv[1]);
+	init_vars(&map);
+	hunt_letter(&map);
+	all_checks(&map);
+	find_path(&map);
+	init_points(&map);
+	init_window(&map);
 }

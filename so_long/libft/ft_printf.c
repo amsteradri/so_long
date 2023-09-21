@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int ft_types(va_list args, const char format)
+int	ft_types(va_list args, const char format)
 {
-    int	i;
+	int	i;
 
 	i = 0;
 	if (format == 'c')
@@ -32,9 +32,8 @@ int ft_types(va_list args, const char format)
 	else if (format == 'X')
 		i = ft_hexamayus(va_arg(args, unsigned long));
 	else if (format == '%')
-		i = ft_printpercent(format);
+		i = ft_printpercent();
 	return (i);
-
 }
 
 int	ft_printf(const char *str, ...)

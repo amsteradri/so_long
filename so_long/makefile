@@ -12,7 +12,7 @@
 
 NAME		=	so_long
 CC			=	gcc
-SRCS		=	so_long.c errors.c map_interpret.c map_requiremets.c map_graph.c
+SRCS		=	so_long.c errors.c errors2.c map_interpret.c map_requirements.c map_requirements2.c map_requirements3.c map_graph.c graph_utils.c graph_utils2.c graph_utils3.c
 
 LIBFT		=	libft/libft.a
 CFLAGS		=	-Wall -Wextra -Werror

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_hexamayus(unsigned int nb) 
+int	ft_hexamayus(unsigned int nb)
 {
 	char	*str;
 	int		i;
@@ -20,6 +20,6 @@ int	ft_hexamayus(unsigned int nb)
 	i = 0;
 	str = ft_itoa_base(nb, "0123456789ABCDEF");
 	i = ft_putstr(str);
-	free(str);
-	return(i);
+	free (str);
+	return (i);
 }
